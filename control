@@ -1,0 +1,9 @@
+Package: com.kaitouiet.compactdate
+Name: CompactDate
+Depends: mobilesubstrate
+Version: 1.0.0
+Architecture: iphoneos-arm
+Description: Compacts your lock screen date to make it more simplistic!  
+Maintainer: Kiet Ha
+Author: Kiet Ha
+Section: Tweaks
