@@ -4,8 +4,22 @@
 }
 %end
 
-%hook SBScreenWakeAnimationController
-- (void)_startWakeAnimationsForWaking:(_Bool)arg1 animationSettings:(id)arg2{
-  %orig(arg1,nil); // fixes the laggy bug on ios11 when u wake device
-	}
+/*
+now its time to fix the wake up lag causing the date to go crazy
+*/
+
+@interface SBAnimationSettings
+@property(nonatomic) long long animationType;
+@end
+
+@interface SBWakeAnimationSettings
+@property(retain, nonatomic) SBAnimationSettings *dateWakeSettings;
+- (void)setDefaultValues;
+@end
+
+%hook SBWakeAnimationSettings
+- (void)setDefaultValues {
+  %orig;
+  self.dateWakeSettings = nil;
+}
 %end
