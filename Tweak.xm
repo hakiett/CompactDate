@@ -9,7 +9,6 @@ now its time to fix the wake up lag causing the date to go crazy
 */
 
 @interface SBAnimationSettings
-@property(nonatomic) long long animationType;
 @end
 
 @interface SBWakeAnimationSettings
